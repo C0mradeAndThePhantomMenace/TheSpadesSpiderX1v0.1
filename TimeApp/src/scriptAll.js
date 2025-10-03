@@ -46,7 +46,7 @@ function updateCounter() {
 function executeAllFunctions() {
     updateClock();
     updateCounter();
-    timeLeft & updateCountdown();
+    timeLeft && updateCountdown();
 }
 
 setInterval(executeAllFunctions, 1000);
