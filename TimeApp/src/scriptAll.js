@@ -20,7 +20,7 @@ function updateCountdown() {
     const countdownDisplay = document.getElementById('countdown');
     countdownDisplay.textContent = timeLeft -1;
 
-    if (timeLeft <= 0) {
+    if (timeLeft <= 1) {
         // clearInterval(timerInterval);
         countdownDisplay.textContent = "Time's up!";
     }
