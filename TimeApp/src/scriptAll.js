@@ -14,11 +14,11 @@ function updateClock() {
     const timeString = `${hours}:${minutes}:${seconds}`;
     document.getElementById('clock').textContent = timeString;
 }
-let timeLeft = 10; // Initial countdown time in seconds
+let timeLeft = 11; // Initial countdown time in seconds
 
 function updateCountdown() {
     const countdownDisplay = document.getElementById('countdown');
-    countdownDisplay.textContent = timeLeft;
+    countdownDisplay.textContent = timeLeft -1;
 
     if (timeLeft <= 0) {
         // clearInterval(timerInterval);
