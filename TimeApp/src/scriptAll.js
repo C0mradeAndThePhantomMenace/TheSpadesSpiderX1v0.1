@@ -12,7 +12,7 @@ function updateClock() {
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
     const timeString = `${hours}:${minutes}:${seconds}`;
-    document.getElementById('clock').textContent = timeString;
+    document.getElementById('clock').textContent = "01-:: " + timeString;
 }
 
 // Update the clock every second
