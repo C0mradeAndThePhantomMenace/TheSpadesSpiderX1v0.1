@@ -23,10 +23,10 @@ function updateCountdown() {
     if (timeLeft <= 1) {
         // clearInterval(timerInterval);
         countdownDisplay.textContent = "Time's up!";
-        console.log("if", timeLeft )
+        // console.log("if", timeLeft )
     }
     timeLeft--;
-        console.log("ifN",timeLeft )
+        // console.log("ifN",timeLeft )
 
 }
 
@@ -50,7 +50,7 @@ function executeAllFunctions() {
     updateClock();
     updateCounter();
     timeLeft && updateCountdown();
-        console.log("i",timeLeft )
+        // console.log("i",timeLeft )
 
 }
 
