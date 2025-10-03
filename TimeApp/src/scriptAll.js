@@ -54,6 +54,6 @@ setInterval(executeAllFunctions, 1000);
 // Initial call to display the counter immediately
 updateCounter();
 // Initial call to display the countdown immediately
-// updateCountdown();
+updateCountdown();
 // Initial call to display the time immediately
 updateClock();
