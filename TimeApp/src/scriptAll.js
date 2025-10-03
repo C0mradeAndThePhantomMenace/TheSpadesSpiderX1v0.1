@@ -62,3 +62,5 @@ updateCounter();
 updateCountdown();
 // Initial call to display the time immediately
 updateClock();
+
+        console.log("App 1" )
