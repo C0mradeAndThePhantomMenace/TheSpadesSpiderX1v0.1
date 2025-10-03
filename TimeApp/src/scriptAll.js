@@ -21,7 +21,7 @@ function updateCountdown() {
     countdownDisplay.textContent = timeLeft;
 
     if (timeLeft <= 0) {
-        clearInterval(timerInterval);
+        // clearInterval(timerInterval);
         countdownDisplay.textContent = "Time's up!";
     }
     timeLeft--;
@@ -46,7 +46,7 @@ function updateCounter() {
 function executeAllFunctions() {
     updateClock();
     updateCounter();
-    // updateCountdown();
+    timeLeft & updateCountdown();
 }
 
 setInterval(executeAllFunctions, 1000);
