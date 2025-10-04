@@ -14,7 +14,7 @@ function updateClock() {
     const timeString = `${hours}:${minutes}:${seconds}`;
     document.getElementById('clock').textContent = timeString;
 }
-let runUpdateCountdown = true
+let runUpdateCountdown = false
 
 let timeLeft = 10; // Initial countdown time in seconds
 
@@ -48,11 +48,9 @@ function updateCounter() {
 
 
 
-// document.getElementById("counterStart").addEventListener("click", counterStartHandler);
+document.getElementById("counterStart").addEventListener("click", counterStartHandler);
 
-// function counterStartHandler() {
-//   document.getElementById("counterStart").innerHTML = "YOU CLICKED ME!";
-// }
+function counterStartHandler() {runUpdateCountdown = true}
 
 document.getElementById("counterReset").addEventListener("click", counterResetHandler);
 
