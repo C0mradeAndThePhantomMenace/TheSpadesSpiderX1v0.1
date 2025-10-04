@@ -25,7 +25,7 @@ function updateCountUp() {
     countUpCounter++;
     if (countUpCounter > countMax) {
         runUpdateCountUp = false
-        countUpDisplay.textContent = `${countUpCounter - } - Time's up!`;
+        countUpDisplay.textContent = `${countUpCounter - 1} - Time's up!`;
     }
 }
 
