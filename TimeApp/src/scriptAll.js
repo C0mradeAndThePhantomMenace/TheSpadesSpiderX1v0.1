@@ -14,18 +14,18 @@ function updateClock() {
     const timeString = `${hours}:${minutes}:${seconds}`;
     document.getElementById('clock').textContent = timeString;
 }
-let runUpdateCountdown = false
+let runUpdateCountDown = false
 
 let timeLeft = 10; // Initial countdown time in seconds
 
-function updateCountdown() {
+function updateCountDown() {
     const countdownDisplay = document.getElementById('countDown');
     countdownDisplay.textContent = timeLeft;
 
     if (timeLeft <= 0) {
         // clearInterval(timerInterval);
         countdownDisplay.textContent = "Time's up!";
-        runUpdateCountdown = false
+        runUpdateCountDown = false
         // console.log("if", timeLeft )
     }
     timeLeft--;
@@ -35,8 +35,8 @@ function updateCountdown() {
 
 let timeCounter = 0; // Initial countdown time in seconds
 
-function updateCounter() {
-    const countdownDisplay = document.getElementById('counter');
+function updateCounterUp() {
+    const countdownDisplay = document.getElementById('counterUp');
     countdownDisplay.textContent = timeCounter;
     timeCounter++;
 }
@@ -44,41 +44,41 @@ function updateCounter() {
 document.getElementById("countDownStart").addEventListener("click", countDownStartHandler);
 function countDownStartHandler() {
     (timeLeft <= 0)  && (timeLeft = 10)
-    runUpdateCountdown = true
+    runUpdateCountDown = true
 
 }
 
 document.getElementById("countDownReset").addEventListener("click", countDownResetHandler);
 function countDownResetHandler() {
     timeLeft = 10
-    runUpdateCountdown = true
-    updateCountdown();
-    console.log("YOU CLICKED ME!", timeLeft, runUpdateCountdown);
+    runUpdateCountDown = true
+    updateCountDown();
+    console.log("YOU CLICKED ME!", timeLeft, runUpdateCountDown);
 
 }
 
 document.getElementById("countDownStop").addEventListener("click", countDownStopHandler);
-function countDownStopHandler() { runUpdateCountdown = false }
+function countDownStopHandler() { runUpdateCountDown = false }
 
 // Update the countdown every second
-// const timerInterval = setInterval(updateCountdown, 1000);
+// const timerInterval = setInterval(updateCountDown, 1000);
 
 // Update the clock every second
 // setInterval(updateClock, 1000);
 
 function executeAllFunctions() {
     updateClock();
-    updateCounter();
-    runUpdateCountdown && updateCountdown();
+    updateCounterUp();
+    runUpdateCountDown && updateCountDown();
     // console.log("i",timeLeft )
 }
 
 setInterval(executeAllFunctions, 1000);
 
 // Initial call to display the counter immediately
-updateCounter();
+updateCounterUp();
 // Initial call to display the countdown immediately
-updateCountdown();
+updateCountDown();
 // Initial call to display the time immediately
 updateClock();
 
