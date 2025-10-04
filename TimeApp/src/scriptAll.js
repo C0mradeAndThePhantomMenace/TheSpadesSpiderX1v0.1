@@ -50,7 +50,11 @@ function updateCounter() {
 
 document.getElementById("counterStart").addEventListener("click", counterStartHandler);
 
-function counterStartHandler() {runUpdateCountdown = true}
+function counterStartHandler() {
+    (timeLeft <= 0)  && (timeLeft = 10)
+    runUpdateCountdown = true
+
+}
 
 document.getElementById("counterReset").addEventListener("click", counterResetHandler);
 
