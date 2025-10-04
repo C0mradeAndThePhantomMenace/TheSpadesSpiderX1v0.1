@@ -14,15 +14,18 @@ function updateClock() {
     const timeString = `${hours}:${minutes}:${seconds}`;
     document.getElementById('clock').textContent = timeString;
 }
-let timeLeft = 11; // Initial countdown time in seconds
+let runUpdateCountdown = true
+
+let timeLeft = 10; // Initial countdown time in seconds
 
 function updateCountdown() {
     const countdownDisplay = document.getElementById('countdown');
-    countdownDisplay.textContent = timeLeft - 1;
+    countdownDisplay.textContent = timeLeft ;
 
-    if (timeLeft <= 1) {
+    if (timeLeft <= 0) {
         // clearInterval(timerInterval);
         countdownDisplay.textContent = "Time's up!";
+        runUpdateCountdown = false
         // console.log("if", timeLeft )
     }
     timeLeft--;
@@ -49,9 +52,8 @@ function updateCounter() {
 function executeAllFunctions() {
     updateClock();
     updateCounter();
-    timeLeft && updateCountdown();
+    runUpdateCountdown && updateCountdown();
     // console.log("i",timeLeft )
-    ArrFuc()
 }
 
 setInterval(executeAllFunctions, 1000);
@@ -79,3 +81,4 @@ console.log("App 1")
 //     for (i = 0; i < foo.length; i++) { foo[i](); }
 //     foo.pop();
 // }
+// ArrFuc()
