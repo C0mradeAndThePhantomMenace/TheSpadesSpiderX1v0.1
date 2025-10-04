@@ -19,8 +19,8 @@ let runUpdateCountUp = true
 
 let countUpCounter = 0; // Initial countdown time in seconds
 function updateCountUp() {
-    const countdownDisplay = document.getElementById('counterUp');
-    countdownDisplay.textContent = ""+countUpCounter;
+    const countUpDisplay = document.getElementById('countUp');
+    countUpDisplay.textContent = ""+countUpCounter;
     countUpCounter++;
     if (countUpCounter >10) runUpdateCountUp = false
 }
