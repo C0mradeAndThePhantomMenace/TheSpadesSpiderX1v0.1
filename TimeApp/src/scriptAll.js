@@ -15,22 +15,23 @@ function updateClock() {
     document.getElementById('clock').textContent = timeString;
 }
 
-let runUpdateCountUp = true
+let countMax = 3
 
+let runUpdateCountUp = false
 let countUpCounter = 0; // Initial countdown time in seconds
 function updateCountUp() {
     const countUpDisplay = document.getElementById('countUp');
     countUpDisplay.textContent = "" + countUpCounter;
     countUpCounter++;
-    if (countUpCounter > 10) {
+    if (countUpCounter > countMax) {
         runUpdateCountUp = false
-        countUpDisplay.textContent = `countUpCounter - Time's up!`;
+        countUpDisplay.textContent = `${countUpCounter - } - Time's up!`;
     }
 }
 
 document.getElementById("countUpStart").addEventListener("click", countUpStartHandler);
 function countUpStartHandler() {
-    (countUpCounter > 10) && (countUpCounter = 0)
+    (countUpCounter > countMax) && (countUpCounter = 0)
     runUpdateCountUp = true
 
 }
@@ -48,14 +49,14 @@ document.getElementById("countUpStop").addEventListener("click", countUpStopHand
 function countUpStopHandler() { runUpdateCountUp = false }
 
 let runUpdateCountDown = false
-let countDownCounter = 10; // Initial countdown time in seconds
+let countDownCounter = countMax; // Initial countdown time in seconds
 function updateCountDown() {
     const countdownDisplay = document.getElementById('countDown');
     countdownDisplay.textContent = countDownCounter;
 
     if (countDownCounter <= 0) {
         // clearInterval(timerInterval);
-        countdownDisplay.textContent = `countDownCounter - Time's up!`;
+        countdownDisplay.textContent = `${countDownCounter} - Time's up!`;
         runUpdateCountDown = false
         // console.log("if", countDownCounter )
     }
@@ -66,14 +67,14 @@ function updateCountDown() {
 
 document.getElementById("countDownStart").addEventListener("click", countDownStartHandler);
 function countDownStartHandler() {
-    (countDownCounter <= 0) && (countDownCounter = 10)
+    (countDownCounter <= 0) && (countDownCounter = countMax)
     runUpdateCountDown = true
 
 }
 
 document.getElementById("countDownReset").addEventListener("click", countDownResetHandler);
 function countDownResetHandler() {
-    countDownCounter = 10
+    countDownCounter = countMax
     runUpdateCountDown = false
     updateCountDown();
     console.log("YOU CLICKED ME!", countDownCounter, runUpdateCountDown);
