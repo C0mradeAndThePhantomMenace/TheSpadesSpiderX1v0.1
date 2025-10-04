@@ -20,7 +20,7 @@ let timeLeft = 10; // Initial countdown time in seconds
 
 function updateCountdown() {
     const countdownDisplay = document.getElementById('countdown');
-    countdownDisplay.textContent = timeLeft ;
+    countdownDisplay.textContent = timeLeft;
 
     if (timeLeft <= 0) {
         // clearInterval(timerInterval);
@@ -29,7 +29,7 @@ function updateCountdown() {
         // console.log("if", timeLeft )
     }
     timeLeft--;
-    console.log("ifN",timeLeft )
+    console.log("ifN", timeLeft)
 
 }
 
@@ -57,7 +57,10 @@ function updateCounter() {
 document.getElementById("counterReset").addEventListener("click", counterResetHandler);
 
 function counterResetHandler() {
-  document.getElementById("counterResetClicked").innerHTML = "YOU CLICKED ME!";
+    document.getElementById("counterResetClicked").innerHTML = "YOU CLICKED ME!";
+    timeLeft = 10
+    runUpdateCountdown = true
+
 }
 
 // document.getElementById("counterStop").addEventListener("click", counterStopHandler);
