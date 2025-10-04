@@ -64,11 +64,9 @@ function counterResetHandler() {
 
 }
 
-// document.getElementById("counterStop").addEventListener("click", counterStopHandler);
+document.getElementById("counterStop").addEventListener("click", counterStopHandler);
 
-// function counterStopHandler() {
-//   document.getElementById("counterStop").innerHTML = "YOU CLICKED ME!";
-// }
+function counterStopHandler() { runUpdateCountdown = false }
 
 // Update the countdown every second
 // const timerInterval = setInterval(updateCountdown, 1000);
