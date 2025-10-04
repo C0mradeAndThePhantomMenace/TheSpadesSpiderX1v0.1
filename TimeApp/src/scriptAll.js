@@ -22,15 +22,27 @@ function updateCountUp() {
     const countdownDisplay = document.getElementById('counterUp');
     countdownDisplay.textContent = countUpCounter;
     countUpCounter++;
-    if (countUpCounter <10) runUpdateCountUp = false
-    //     if (countUpCounter <11) {
-    //     const countdownDisplay = document.getElementById('counterUp');
-    //     countdownDisplay.textContent = countUpCounter;
-    //     countUpCounter++;
+    if (countUpCounter >10) runUpdateCountUp = false
+}
 
-    // }
+document.getElementById("countUpStart").addEventListener("click", countUpStartHandler);
+function countUpStartHandler() {
+    (countUpCounter > 10 ) && (countUpCounter = 0)
+    runUpdateCountUp = true
 
 }
+
+document.getElementById("countUpReset").addEventListener("click", countUpResetHandler);
+function countUpResetHandler() {
+    countUpCounter = 0
+    runUpdateCountUp = true
+    updateCountUp();
+    console.log("YOU CLICKED ME!", countUpCounter, runUpdateCountUp);
+
+}
+
+document.getElementById("countUpStop").addEventListener("click", countUpStopHandler);
+function countUpStopHandler() { runUpdateCountUp = false }
 
 let runUpdateCountDown = false
 let countDownCounter = 10; // Initial countdown time in seconds
