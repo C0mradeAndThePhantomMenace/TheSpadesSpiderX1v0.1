@@ -43,6 +43,29 @@ function updateCounter() {
     timeCounter++;
 }
 
+
+
+
+
+
+// document.getElementById("counterStart").addEventListener("click", counterStartHandler);
+
+// function counterStartHandler() {
+//   document.getElementById("counterStart").innerHTML = "YOU CLICKED ME!";
+// }
+
+document.getElementById("counterReset").addEventListener("click", counterResetHandler);
+
+function counterResetHandler() {
+  document.getElementById("counterResetClicked").innerHTML = "YOU CLICKED ME!";
+}
+
+// document.getElementById("counterStop").addEventListener("click", counterStopHandler);
+
+// function counterStopHandler() {
+//   document.getElementById("counterStop").innerHTML = "YOU CLICKED ME!";
+// }
+
 // Update the countdown every second
 // const timerInterval = setInterval(updateCountdown, 1000);
 
