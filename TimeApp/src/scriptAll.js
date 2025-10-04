@@ -15,14 +15,21 @@ function updateClock() {
     document.getElementById('clock').textContent = timeString;
 }
 
-let runUpdateCountUp = false
+let runUpdateCountUp = true
 
-let timeCounter = 0; // Initial countdown time in seconds
+let countUpCounter = 0; // Initial countdown time in seconds
 function updateCountUp() {
     const countdownDisplay = document.getElementById('counterUp');
-    countdownDisplay.textContent = timeCounter;
-    timeCounter++;
-    
+    countdownDisplay.textContent = countUpCounter;
+    countUpCounter++;
+    if (countUpCounter <10) runUpdateCountUp = false
+    //     if (countUpCounter <11) {
+    //     const countdownDisplay = document.getElementById('counterUp');
+    //     countdownDisplay.textContent = countUpCounter;
+    //     countUpCounter++;
+
+    // }
+
 }
 
 let runUpdateCountDown = false
@@ -44,7 +51,7 @@ function updateCountDown() {
 
 document.getElementById("countDownStart").addEventListener("click", countDownStartHandler);
 function countDownStartHandler() {
-    (countDownCounter <= 0)  && (countDownCounter = 10)
+    (countDownCounter <= 0) && (countDownCounter = 10)
     runUpdateCountDown = true
 
 }
@@ -69,7 +76,7 @@ function countDownStopHandler() { runUpdateCountDown = false }
 
 function executeAllFunctions() {
     updateClock();
-    updateCountUp();
+    runUpdateCountUp && updateCountUp();
     runUpdateCountDown && updateCountDown();
     // console.log("i",countDownCounter )
 }
