@@ -22,7 +22,10 @@ function updateCountUp() {
     const countUpDisplay = document.getElementById('countUp');
     countUpDisplay.textContent = ""+countUpCounter;
     countUpCounter++;
-    if (countUpCounter >10) runUpdateCountUp = false
+    if (countUpCounter >10) {
+        runUpdateCountUp = false
+        countUpDisplay.textContent =+ " - Time's up!";
+    }
 }
 
 document.getElementById("countUpStart").addEventListener("click", countUpStartHandler);
@@ -52,7 +55,7 @@ function updateCountDown() {
 
     if (countDownCounter <= 0) {
         // clearInterval(timerInterval);
-        countdownDisplay.textContent = "Time's up!";
+        countdownDisplay.textContent =+ - "Time's up!";
         runUpdateCountDown = false
         // console.log("if", countDownCounter )
     }
