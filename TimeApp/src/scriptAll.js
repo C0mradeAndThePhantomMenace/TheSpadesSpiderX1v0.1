@@ -60,8 +60,7 @@ function counterResetHandler() {
     timeLeft = 10
     runUpdateCountdown = true
     updateCountdown();
-
-    document.getElementById("counterResetClicked").innerHTML = "YOU CLICKED ME!";
+    console.log("YOU CLICKED ME!", timeLeft, runUpdateCountdown);
 
 }
 
