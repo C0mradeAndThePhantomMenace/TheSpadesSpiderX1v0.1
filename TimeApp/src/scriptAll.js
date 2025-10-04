@@ -19,7 +19,7 @@ let runUpdateCountdown = false
 let timeLeft = 10; // Initial countdown time in seconds
 
 function updateCountdown() {
-    const countdownDisplay = document.getElementById('countdown');
+    const countdownDisplay = document.getElementById('countDown');
     countdownDisplay.textContent = timeLeft;
 
     if (timeLeft <= 0) {
@@ -33,32 +33,23 @@ function updateCountdown() {
 
 }
 
-
 let timeCounter = 0; // Initial countdown time in seconds
 
 function updateCounter() {
     const countdownDisplay = document.getElementById('counter');
     countdownDisplay.textContent = timeCounter;
-
     timeCounter++;
 }
 
-
-
-
-
-
-document.getElementById("counterStart").addEventListener("click", counterStartHandler);
-
-function counterStartHandler() {
+document.getElementById("countDownStart").addEventListener("click", countDownStartHandler);
+function countDownStartHandler() {
     (timeLeft <= 0)  && (timeLeft = 10)
     runUpdateCountdown = true
 
 }
 
-document.getElementById("counterReset").addEventListener("click", counterResetHandler);
-
-function counterResetHandler() {
+document.getElementById("countDownReset").addEventListener("click", countDownResetHandler);
+function countDownResetHandler() {
     timeLeft = 10
     runUpdateCountdown = true
     updateCountdown();
@@ -66,9 +57,8 @@ function counterResetHandler() {
 
 }
 
-document.getElementById("counterStop").addEventListener("click", counterStopHandler);
-
-function counterStopHandler() { runUpdateCountdown = false }
+document.getElementById("countDownStop").addEventListener("click", countDownStopHandler);
+function countDownStopHandler() { runUpdateCountdown = false }
 
 // Update the countdown every second
 // const timerInterval = setInterval(updateCountdown, 1000);

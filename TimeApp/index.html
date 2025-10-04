@@ -8,18 +8,25 @@
 </head>
 
 <body>
-    <h1>Current Time:</h1>
-    <h2>01-:: <div id="clock"></div>
-    </h2>
-    <h1>Counter:</h1>
-    <div id="counter"></div>
-    <h1>Countdown:</h1>
-    <div id="countdown">Countdown</div>
-    <button id="counterStart">Start Countdown</button>
-    <button id="counterReset">Reset Countdown</button>
+    <div>
+        <h2>Current Time:</h2>
+        <span id="clock" style="font-size: large;">Clock</span>
+    </div>
+    <div id="">
+        <h2>CounterUp (to 10):</h2>
+        <span id="counterUp" style="font-size: large;">Click to CountUp</span>
+        <button id="counterUpStart">Start Countdown</button>
+        <button id="counterUpReset">Reset Countdown</button>
+        <button id="counterUpStop">Stop Countdown</button>
+    </div>
     <!-- <button id="counterResetClicked">watting...</button> -->
-    <button id="counterStop">Stop Countdown</button>
-
+    <div>
+        <h2>CountDown:</h2>
+        <span id="countDown" style="font-size: large;">CountDown</span>
+        <button id="countDownStart">Start Countdown</button>
+        <button id="countDownReset">Reset Countdown</button>
+        <button id="countDownStop">Stop Countdown</button>
+    </div>
 
     <script src="src/scriptAll.js"></script>
     <!-- <script src="src/scriptClock.js"></script> -->
