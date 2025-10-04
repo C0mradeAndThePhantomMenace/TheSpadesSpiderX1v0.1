@@ -57,9 +57,9 @@ function updateCounter() {
 document.getElementById("counterReset").addEventListener("click", counterResetHandler);
 
 function counterResetHandler() {
-    document.getElementById("counterResetClicked").innerHTML = "YOU CLICKED ME!";
     timeLeft = 10
     runUpdateCountdown = true
+    document.getElementById("counterResetClicked").innerHTML = "YOU CLICKED ME!";
 
 }
 
