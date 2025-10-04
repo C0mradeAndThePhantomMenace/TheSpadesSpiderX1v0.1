@@ -35,7 +35,7 @@ function countUpStartHandler() {
 document.getElementById("countUpReset").addEventListener("click", countUpResetHandler);
 function countUpResetHandler() {
     countUpCounter = 0
-    runUpdateCountUp = true
+    runUpdateCountUp = false
     updateCountUp();
     console.log("YOU CLICKED ME!", countUpCounter, runUpdateCountUp);
 
@@ -71,7 +71,7 @@ function countDownStartHandler() {
 document.getElementById("countDownReset").addEventListener("click", countDownResetHandler);
 function countDownResetHandler() {
     countDownCounter = 10
-    runUpdateCountDown = true
+    runUpdateCountDown = false
     updateCountDown();
     console.log("YOU CLICKED ME!", countDownCounter, runUpdateCountDown);
 
