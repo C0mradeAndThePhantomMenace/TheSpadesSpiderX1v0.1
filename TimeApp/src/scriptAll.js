@@ -46,8 +46,11 @@ var c = function () { console.log("this is function: c") }
 
 var foo = [a, b, c];
 function ArrFuc() {
-    while (foo.length) { foo.shift().call(); }
+    // while (foo.length) { foo.shift().call(); }
+
+    for (i = 0; i < foo.length; i++) { foo[i](); }
     foo.pop();
+
 }
 // Update the countdown every second
 // const timerInterval = setInterval(updateCountdown, 1000);
