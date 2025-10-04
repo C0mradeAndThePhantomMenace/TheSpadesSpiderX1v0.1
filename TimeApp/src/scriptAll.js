@@ -14,46 +14,47 @@ function updateClock() {
     const timeString = `${hours}:${minutes}:${seconds}`;
     document.getElementById('clock').textContent = timeString;
 }
-let runUpdateCountDown = false
 
-let timeLeft = 10; // Initial countdown time in seconds
-
-function updateCountDown() {
-    const countdownDisplay = document.getElementById('countDown');
-    countdownDisplay.textContent = timeLeft;
-
-    if (timeLeft <= 0) {
-        // clearInterval(timerInterval);
-        countdownDisplay.textContent = "Time's up!";
-        runUpdateCountDown = false
-        // console.log("if", timeLeft )
-    }
-    timeLeft--;
-    console.log("ifN", timeLeft)
-
-}
+let runUpdateCountUp = false
 
 let timeCounter = 0; // Initial countdown time in seconds
-
-function updateCounterUp() {
+function updateCountUp() {
     const countdownDisplay = document.getElementById('counterUp');
     countdownDisplay.textContent = timeCounter;
     timeCounter++;
+    
+}
+
+let runUpdateCountDown = false
+let countDownCounter = 10; // Initial countdown time in seconds
+function updateCountDown() {
+    const countdownDisplay = document.getElementById('countDown');
+    countdownDisplay.textContent = countDownCounter;
+
+    if (countDownCounter <= 0) {
+        // clearInterval(timerInterval);
+        countdownDisplay.textContent = "Time's up!";
+        runUpdateCountDown = false
+        // console.log("if", countDownCounter )
+    }
+    countDownCounter--;
+    console.log("ifN", countDownCounter)
+
 }
 
 document.getElementById("countDownStart").addEventListener("click", countDownStartHandler);
 function countDownStartHandler() {
-    (timeLeft <= 0)  && (timeLeft = 10)
+    (countDownCounter <= 0)  && (countDownCounter = 10)
     runUpdateCountDown = true
 
 }
 
 document.getElementById("countDownReset").addEventListener("click", countDownResetHandler);
 function countDownResetHandler() {
-    timeLeft = 10
+    countDownCounter = 10
     runUpdateCountDown = true
     updateCountDown();
-    console.log("YOU CLICKED ME!", timeLeft, runUpdateCountDown);
+    console.log("YOU CLICKED ME!", countDownCounter, runUpdateCountDown);
 
 }
 
@@ -68,15 +69,15 @@ function countDownStopHandler() { runUpdateCountDown = false }
 
 function executeAllFunctions() {
     updateClock();
-    updateCounterUp();
+    updateCountUp();
     runUpdateCountDown && updateCountDown();
-    // console.log("i",timeLeft )
+    // console.log("i",countDownCounter )
 }
 
 setInterval(executeAllFunctions, 1000);
 
 // Initial call to display the counter immediately
-updateCounterUp();
+updateCountUp();
 // Initial call to display the countdown immediately
 updateCountDown();
 // Initial call to display the time immediately
