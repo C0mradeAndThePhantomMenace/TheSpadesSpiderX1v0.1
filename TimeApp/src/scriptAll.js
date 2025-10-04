@@ -18,7 +18,7 @@ let timeLeft = 11; // Initial countdown time in seconds
 
 function updateCountdown() {
     const countdownDisplay = document.getElementById('countdown');
-    countdownDisplay.textContent = timeLeft -1;
+    countdownDisplay.textContent = timeLeft - 1;
 
     if (timeLeft <= 1) {
         // clearInterval(timerInterval);
@@ -26,7 +26,7 @@ function updateCountdown() {
         // console.log("if", timeLeft )
     }
     timeLeft--;
-        // console.log("ifN",timeLeft )
+    // console.log("ifN",timeLeft )
 
 }
 
@@ -40,6 +40,15 @@ function updateCounter() {
     timeCounter++;
 }
 
+var a = function () { console.log("this is function: a") }
+var b = function () { console.log("this is function: b") }
+var c = function () { console.log("this is function: c") }
+
+var foo = [a, b, c];
+function ArrFuc() {
+    while (foo.length) { foo.shift().call(); }
+    foo.pop();
+}
 // Update the countdown every second
 // const timerInterval = setInterval(updateCountdown, 1000);
 
@@ -50,8 +59,8 @@ function executeAllFunctions() {
     updateClock();
     updateCounter();
     timeLeft && updateCountdown();
-        // console.log("i",timeLeft )
-
+    // console.log("i",timeLeft )
+    ArrFuc()
 }
 
 setInterval(executeAllFunctions, 1000);
@@ -63,4 +72,5 @@ updateCountdown();
 // Initial call to display the time immediately
 updateClock();
 
-        console.log("App 1" )
+console.log("App 1")
+
