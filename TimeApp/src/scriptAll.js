@@ -20,7 +20,7 @@ let runUpdateCountUp = true
 let countUpCounter = 0; // Initial countdown time in seconds
 function updateCountUp() {
     const countdownDisplay = document.getElementById('counterUp');
-    countdownDisplay.textContent = countUpCounter;
+    countdownDisplay.textContent = ""+countUpCounter;
     countUpCounter++;
     if (countUpCounter >10) runUpdateCountUp = false
 }
