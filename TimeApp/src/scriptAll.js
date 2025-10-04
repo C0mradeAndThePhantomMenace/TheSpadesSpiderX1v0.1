@@ -26,7 +26,7 @@ function updateCountdown() {
         // console.log("if", timeLeft )
     }
     timeLeft--;
-    // console.log("ifN",timeLeft )
+    console.log("ifN",timeLeft )
 
 }
 
@@ -40,18 +40,6 @@ function updateCounter() {
     timeCounter++;
 }
 
-var a = function () { console.log("this is function: a") }
-var b = function () { console.log("this is function: b") }
-var c = function () { console.log("this is function: c") }
-
-var foo = [a, b, c];
-function ArrFuc() {
-    // while (foo.length) { foo.shift().call(); }
-
-    for (i = 0; i < foo.length; i++) { foo[i](); }
-    foo.pop();
-
-}
 // Update the countdown every second
 // const timerInterval = setInterval(updateCountdown, 1000);
 
@@ -77,3 +65,17 @@ updateClock();
 
 console.log("App 1")
 
+
+// *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+
+// var a = function () { console.log("this is function: a") }
+// var b = function () { console.log("this is function: b") }
+// var c = function () { console.log("this is function: c") }
+
+// var foo = [a, b, c];
+// function ArrFuc() {
+//     // while (foo.length) { foo.shift().call(); }
+
+//     for (i = 0; i < foo.length; i++) { foo[i](); }
+//     foo.pop();
+// }
