@@ -116,6 +116,7 @@ given_seconds = given_seconds % (60*60)
 minutes = Math.floor(given_seconds / 60)
 seconds = given_seconds % 60
 console.log(days, ":", hours, ":", minutes, ":", seconds)
+console.log(`$(days):$(hours):$(minutes):$(seconds)`)
 
 // *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 
