@@ -107,8 +107,8 @@ updateCountDown();
 updateClock();
 
 console.log("App 1")
-
-given_seconds = 123456
+given_secondsX = [123426, 1234261]
+given_seconds = given_secondsX[0]
 days = Math.floor(given_seconds / (60*60*24))
 given_seconds = Math.floor(given_seconds % (60*60*24))
 hours = Math.floor(given_seconds / (60*60))
@@ -116,7 +116,8 @@ given_seconds = given_seconds % (60*60)
 minutes = Math.floor(given_seconds / 60)
 seconds = given_seconds % 60
 console.log(days, ":", hours, ":", minutes, ":", seconds)
-console.log(`${days}:${hours}:${minutes}:${seconds}`)
+console.log(`${days>9? "":"0"}${days} Day${days>1? "s":""} - ${hours>9? "":"0"}${hours}:${minutes>9? "":"0"}${minutes}:${seconds>9? "":"0"}${seconds}`)
+
 
 // *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
 
