@@ -1,9 +1,10 @@
 :root {
     --CSS-box-model: .5vh;
-    --body-box: calc(100vh - (--CSS-box-model * 3));
+    /* Not Working */
+    --body-box: calc(100vh - ( --CSS-box-model * 3));
+    --html-box: calc(100vh - (--CSS-box-model * 3));
     --primary-bg-color: #1e90ff;
     --primary-color: #ffffff;
-    
 }
 
 * {
@@ -14,14 +15,15 @@
 }
 
 html {
-    border: blue solid var(--CSS-box-model);
+    border: gold solid var(--CSS-box-model);
     background-color: blueviolet;
+    height: 97vh;
 }
 
 body {
     border: green solid var(--CSS-box-model);
     background-color: gold;
-    height: var(--body-box);
+    height: 94vh;
 }
 
 h1 {
