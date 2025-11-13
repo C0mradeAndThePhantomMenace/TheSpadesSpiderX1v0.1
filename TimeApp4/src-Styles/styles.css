@@ -1,7 +1,7 @@
 :root {
     --CSS-box-model: .5vh;
     /* Not Working */
-    --body-box: calc(100vh - (--CSS-box-model * 3));
+    --body-box: calc(100vh - ( --CSS-box-model * 3));
     --html-box: calc(100vh - (--CSS-box-model * 3));
     --primary-bg-color: #1e90ff;
     --primary-color: #ffffff;
@@ -30,9 +30,8 @@ h1 {
     border: yellowgreen solid var(--CSS-box-model);
 }
 
+
 div {
     border: yellowgreen solid var(--CSS-box-model);
-    text-align: center;
-    align-items: center;
-
 }
+
